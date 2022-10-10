@@ -64,7 +64,7 @@ public static void main(String[] args) throws IOException {
                 
                 //MASUKKAN OBJECT
                 la[i] = new LionAir (nomorPesawat, tujuan, noKursi,jumlah,nik,nama,jk,bookingID,tgl_berangkat, 
-                tgl_kembali,bandaraAsal, total);
+                tgl_kembali,bandaraAsal);
                 
             }
         }
@@ -88,7 +88,7 @@ public static void main(String[] args) throws IOException {
                 
                 //masukkan object
                 c[i] = new Citilink (nomorPesawat, tujuan, noKursi,jumlah,nik,nama,jk,bookingID,tgl_berangkat, 
-                tgl_kembali,bandaraAsal, total);
+                tgl_kembali,bandaraAsal);
                 
             }
         }

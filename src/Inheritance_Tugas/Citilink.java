@@ -13,7 +13,7 @@ public class Citilink extends Tiket {
     private int total;
     
     //constructor
-    public Citilink(String nomorPesawat, String tujuan, String noKursi,int jumlah, String nik, String nama, String jk, String bookingID, String tgl_berangkat, String tgl_kembali, String bandaraAsal, int total) {
+    public Citilink(String nomorPesawat, String tujuan, String noKursi,int jumlah, String nik, String nama, String jk, String bookingID, String tgl_berangkat, String tgl_kembali, String bandaraAsal) {
         super(nik, nama, jk, bookingID, tgl_berangkat, tgl_kembali, bandaraAsal);
         this.nomorPesawat = nomorPesawat;
         this.tujuan = tujuan;

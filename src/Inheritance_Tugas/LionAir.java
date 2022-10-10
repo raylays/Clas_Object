@@ -13,36 +13,8 @@ public class LionAir extends Tiket {
     //constructor
     public LionAir(String nomorPesawat, String tujuan, String noKursi,int jumlah, 
     String nik, String nama, String jk, String bookingID, String tgl_berangkat, 
-    String tgl_kembali, String bandaraAsal, int total) {
+    String tgl_kembali, String bandaraAsal) {
         super(nik, nama, jk, bookingID, tgl_berangkat, tgl_kembali, bandaraAsal);
-        this.nomorPesawat = nomorPesawat;
-        this.tujuan = tujuan;
-        this.noKursi = noKursi;
-        this.harga = harga;
-        this.jumlahPenumpang = jumlahPenumpang;
-        this.total = total;
-    }
-
-    
-
-    public String getNomorPesawat() {
-        return nomorPesawat;
-        
-    }
-
-    public int getJumlahPenumpang() {
-       return jumlahPenumpang;
-    }
-
-    public String getTujuan() {
-        return tujuan;
-    }
-
-    public String getNoKursi() {
-        return noKursi;
-    }
-
-    public int getHarga() {
         //surabaya
         if(bandaraAsal.equalsIgnoreCase("Surabaya")){
         if(tujuan.equalsIgnoreCase("Bali") || tujuan.equalsIgnoreCase("Lombok")){
@@ -67,6 +39,33 @@ public class LionAir extends Tiket {
             this.harga = 800000;
             }
         }
+        this.nomorPesawat = nomorPesawat;
+        this.tujuan = tujuan;
+        this.noKursi = noKursi;
+        this.jumlahPenumpang = jumlahPenumpang;
+        this.total = total;
+    }
+
+    
+
+    public String getNomorPesawat() {
+        return nomorPesawat;
+        
+    }
+
+    public int getJumlahPenumpang() {
+       return jumlahPenumpang;
+    }
+
+    public String getTujuan() {
+        return tujuan;
+    }
+
+    public String getNoKursi() {
+        return noKursi;
+    }
+
+    public int getHarga() {
         return harga;
                     
                
