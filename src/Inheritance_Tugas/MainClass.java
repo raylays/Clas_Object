@@ -6,12 +6,14 @@ public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader 
         (new InputStreamReader(System.in));
     //variable
-    String bookingID = "", nik = "", nama="", jk="", tgl_berangkat="", tgl_kembali="",
-            bandaraAsal="";
+    String bookingID = "", nik = "", nama="", jk="", tgl_berangkat="", tgl_kembali="-",
+            option = "",bandaraAsal="";
     int jumlahPenumpang, harga=0, total=0, temp=0;
     String tujuan="", nomorPesawat="", noKursi="";
     
     try {
+         do{
+        tgl_kembali = "- ";
         System.out.println("=== Pemesanan Tiket ===");
         //entry jumlah
         System.out.println("Masukkan Jumlah Penumpang : ");
@@ -33,8 +35,10 @@ public static void main(String[] args) throws IOException {
         tgl_berangkat = br.readLine();
         System.out.println("Pesan Pulang - Pergi? (Y/T): ");
         String PP = br.readLine();
-        System.out.println("Entry Tanggal Kembali : ");
-        tgl_kembali = br.readLine();
+        if(PP.equalsIgnoreCase("y")){
+            System.out.println("Entry Tanggal Kembali : ");
+            tgl_kembali = br.readLine();
+        }
         
         System.out.println("\n");
         System.out.println("--Pilih Maskapai--");
@@ -104,8 +108,16 @@ public static void main(String[] args) throws IOException {
         for(int i = 0; i < la.length; i++){
                         temp += la[i].getHarga();
                     } 
-        System.out.println("Harga Total : " + temp);
-        temp = 0;
+        
+        //HARGA TOTAL
+        System.out.println("-----------------------------------");
+        if(PP.equalsIgnoreCase("y")){
+        String status = "(PP)";
+        System.out.println("Harga Total " + status + " : Rp"+temp*2);
+        }else{
+        System.out.println("Harga Total (Tidak PP): " + temp);
+        }
+        System.out.println("===================================");
         }
         
         //citilink
@@ -120,9 +132,19 @@ public static void main(String[] args) throws IOException {
                         temp += c[i].getHarga();
                     } 
         //harga total
-        System.out.println("Harga Total : " + temp);
-        temp = 0;
+        System.out.println("-----------------------------------");
+        if(PP.equalsIgnoreCase("y")){
+            String status = "(PP)";
+            System.out.println("Harga Total " + status + " : Rp"+temp*2);
+        }else{
+            System.out.println("Harga Total (Tidak PP): " + temp);
         }
+        System.out.println("===================================");
+        }
+        
+        System.out.print("Repurchase ticket? (y/n) : ");
+        option = br.readLine();
+        }while(option.equalsIgnoreCase("y"));
     } catch (Exception e) {
     }
       
